@@ -1,0 +1,35 @@
+@startuml
+actor Usuario
+participant "Sistema de Matriculas" as Sistema
+database "Base de Datos" as BD
+
+== Registrar Estudiante ==
+Usuario -> Sistema: Solicita registro de estudiante
+Sistema -> Sistema: Muestra formulario de registro
+Usuario -> Sistema: Rellena y envía el formulario
+Sistema -> Sistema: Valida los datos del estudiante
+Sistema -> BD: Almacena los datos del estudiante
+BD -> Sistema: Confirmación de registro
+Sistema -> Usuario: Notificación de éxito
+
+== Editar Estudiante ==
+Usuario -> Sistema: Selecciona estudiante
+Usuario -> Sistema: Presiona botón de editar
+Sistema -> BD: Obtiene datos actuales del estudiante
+BD -> Sistema: Retorna datos actuales
+Sistema -> Usuario: Muestra formulario prellenado
+Usuario -> Sistema: Modifica y envía formulario
+Sistema -> Sistema: Valida los datos actualizados
+Sistema -> BD: Actualiza los datos del estudiante
+BD -> Sistema: Confirmación de actualización
+Sistema -> Usuario: Notificación de éxito
+
+== Eliminar Estudiante ==
+Usuario -> Sistema: Selecciona estudiante
+Usuario -> Sistema: Presiona botón de eliminar
+Sistema -> Usuario: Solicita confirmación
+Usuario -> Sistema: Confirma eliminación
+Sistema -> BD: Elimina el registro del estudiante
+BD -> Sistema: Confirmación de eliminación
+Sistema -> Usuario: Notificación de éxito
+@enduml

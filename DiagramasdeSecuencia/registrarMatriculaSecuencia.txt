@@ -1,0 +1,20 @@
+@startuml
+actor Usuario
+participant "Sistema de Matriculas" as Sistema
+database "Base de Datos" as BD
+participant "Navegador" as Navegador
+
+Usuario -> Sistema: Solicita matricular estudiante
+Usuario -> Sistema: Ingresa DNI para buscar estudiante
+Sistema -> BD: Busca estudiante por DNI
+BD -> Sistema: Datos del estudiante
+Sistema -> Usuario: Notifica que el estudiante fue encontrado
+Sistema -> Sistema: Autorrellena campos del estudiante
+Usuario -> Sistema: Completa especialidad y número de recibo
+Sistema -> Sistema: Valida los datos de la matrícula
+Sistema -> BD: Almacena la matrícula
+BD -> Sistema: Confirmación de registro
+Sistema -> Usuario: Notificación de éxito
+Sistema -> Navegador: Genera reporte de matrícula en PDF
+Navegador -> Usuario: Muestra ficha de matrícula del estudiante
+@enduml

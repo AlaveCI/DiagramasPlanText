@@ -1,0 +1,23 @@
+@startuml
+actor Usuario
+participant "Sistema de Matriculas" as Sistema
+database "Base de Datos" as BD
+participant "Navegador" as Navegador
+
+Usuario -> Sistema: Selecciona especialidad
+Sistema -> Usuario: Muestra especialidades registradas
+
+== Generar lista de estudiantes por turno ==
+Usuario -> Sistema: Presiona botón para generar lista de estudiantes por turno
+Sistema -> Sistema: Solicita turno (mañana o tarde)
+Usuario -> Sistema: Selecciona turno
+Sistema -> BD: Consulta estudiantes matriculados en la especialidad y turno
+BD -> Sistema: Retorna lista de estudiantes
+Sistema -> Navegador: Genera y muestra lista de estudiantes por turno
+
+== Generar nomina completa de estudiantes - ugel ==
+Usuario -> Sistema: Presiona botón para generar reporte de todos los estudiantes
+Sistema -> BD: Consulta todos los estudiantes matriculados en la especialidad
+BD -> Sistema: Retorna lista completa de estudiantes
+Sistema -> Navegador: Genera y muestra reporte completo de estudiantes
+@enduml
