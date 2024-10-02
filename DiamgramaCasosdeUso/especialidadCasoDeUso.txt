@@ -1,0 +1,16 @@
+@startuml
+actor Usuario
+usecase "Registrar Especialidad" as UC1
+usecase "Asignar Unidades Didácticas" as UC2
+usecase "Registrar Indicadores de Logro" as UC3
+usecase "Ver Especialidades" as UC4
+usecase "Generar Lista de Estudiantes por Turno" as UC5
+usecase "Generar Reporte de Estudiantes" as UC6
+
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC4
+Usuario --> UC5
+Usuario --> UC6
+@enduml

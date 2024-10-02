@@ -1,0 +1,12 @@
+@startuml
+actor Usuario
+usecase "Registrar Docente" as UC1
+usecase "Editar Docente" as UC2
+usecase "Eliminar Docente" as UC3
+usecase "Ver Docentes" as UC4
+
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC4
+@enduml

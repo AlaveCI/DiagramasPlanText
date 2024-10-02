@@ -1,0 +1,12 @@
+@startuml
+actor Usuario
+usecase "Matricular Estudiante" as UC1
+usecase "Buscar Estudiante por DNI" as UC2
+usecase "Generar Ficha de Matrícula" as UC3
+usecase "Ver Estudiantes Matriculados" as UC4
+
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC4
+@enduml
